@@ -1,0 +1,9 @@
+Requerimientos del sistema para colegios:
+1. Usuario de Gestión
+1.1.	Pantalla de login
+1.2.	Gestión de notas
+1.3.	Gestión de alumnos
+
+2. Usuario Estudiante
+2.1.	Pantalla de login
+2.2.	Visualizar notas
