@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistema para Colegios</title>
+	<title>Login | Sistema para Colegios</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
 	<div class="main-body">
-		<div class="navbar-content">
-			<div class="user-detail">
-				<img src="assets/img/user.jpg">
-				<h4 class="mt10">Jose Bazán</h4>
-				<center>
-					<h5 class="mt10">Programación</h5>
-				</center>
-			</div>
-			<div class="navbar-detail">
-				<ul>
-					<li>Inicio</li>
-					<li>Gestión alumnos</li>
-					<li>Salir</li>
-				</ul>
-			</div>
-		</div>
-		<div class="body-content">
-			<h2>Lista de alumnos</h2>
-			<table class="mt10">
-				<tbody>
-					<tr>
-						<th>Código</th>
-						<th>Nombre</th>
-						<th>Grado - Sección</th>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Luis</td>
-						<td>3 - A</td>
-					</tr>
-				</tbody>
-			</table>
+		<div class="content-form">
+			<h3>Bienvenido al sistema de colegio</h3>
+			<input class="mt10" type="text" id="corusu" placeholder="Correo">
+			<input class="mt10" type="password" id="pasusu" placeholder="Contraseña">
+			<button class="mt10" onclick="try_login()">Ingresar</button>
 		</div>
 	</div>
+	<script type="text/javascript">
+		var request=new XMLHttpRequest();
+		function try_login(){
+			let fd=new FormData();
+			fd.append('corusu',document.getElementById("corusu").value);
+			fd.append('pasusu',document.getElementById("pasusu").value);
+			request.open('POST','api/_login.php',true);
+			request.onload=function(){
+				console.log(request.responseText);
+			}
+			request.send(fd);
+		}
+	</script>
 </body>
 </html>
